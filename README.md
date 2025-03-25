@@ -2,8 +2,6 @@
 
 A tool to detect and manage duplicate videos based on visual similarity.
 
-## Overview
-
 It uses visual hashing to find similar videos even if they have different formats/edits etc. It is slow, but it is accurate. 
 
 ## Installation
@@ -74,7 +72,7 @@ python video_deduplicator.py /path/to/videos --skip 15
 2. Computes phash for frames  
 3. Compares hashes
 4. Flags videos below the threshold as duplicates
-5. Prompts you to choose an action  
+5. You do something
 
 ## Limitations
 If a video is missing time from the front/middle of it, it probably won't pick it up as a duplicate. Video missing from the end is fine.
