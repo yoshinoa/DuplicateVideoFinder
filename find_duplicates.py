@@ -13,8 +13,11 @@ import colorama
 from colorama import Fore, Style
 import shutil
 from datetime import datetime
+import sys
 
-
+current_dir = os.getcwd()
+if len(sys.argv) > 1 and not os.path.isabs(sys.argv[1]):
+    sys.argv[1] = os.path.join(current_dir, sys.argv[1])
 colorama.init()
 
 class VideoDeduplicator:
@@ -143,8 +146,8 @@ class VideoDeduplicator:
             choice = "4"  
             print(f"{Fore.GREEN}Moving duplicate to: {self.move_duplicates}{Style.RESET_ALL}")
         else:
-            print(f"{Fore.CYAN}[1] Keep {os.path.basename(file1)} (delete the other){Style.RESET_ALL}")
-            print(f"{Fore.CYAN}[2] Keep {os.path.basename(file2)} (delete the other){Style.RESET_ALL}")
+            print(f"{Fore.CYAN}[1] Keep {os.path.basename(file1)}{Style.RESET_ALL}")
+            print(f"{Fore.CYAN}[2] Keep {os.path.basename(file2)}{Style.RESET_ALL}")
             print(f"{Fore.CYAN}[3] Keep both files{Style.RESET_ALL}")
             print(f"{Fore.CYAN}[4] Move duplicate to separate folder{Style.RESET_ALL}")
             print(f"{Fore.CYAN}[q] Quit program{Style.RESET_ALL}")
