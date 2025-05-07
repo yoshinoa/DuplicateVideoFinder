@@ -48,22 +48,22 @@ optional arguments:
 
 Stricter matching:
 ```
-python video_deduplicator.py /path/to/videos --threshold 3.0
+python find_duplicates.py /path/to/videos --threshold 3.0
 ```
 
 Batch mode:
 ```
-python video_deduplicator.py /path/to/videos --batch
+python find_duplicates.py /path/to/videos --batch
 ```
 
 Move duplicates instead of deleting:
 ```
-python video_deduplicator.py /path/to/videos --move /path/to/duplicates
+python find_duplicates.py /path/to/videos --move /path/to/duplicates
 ```
 
 Higher accuracy (slower):
 ```
-python video_deduplicator.py /path/to/videos --skip 15
+python find_duplicates.py /path/to/videos --skip 15
 ```
 
 ## How It Works
@@ -81,7 +81,7 @@ If you really wanted to you could slide the frames but it would ^x runtime
 
 ## Caching
 
-I use a SQLite database (`video_hashes.db`) to store video fingerprints and speed up future scans.
+I use a SQLite database (`media_hashes.db`) to store video fingerprints and speed up future scans.
 
 ## Supported Extensions
 
